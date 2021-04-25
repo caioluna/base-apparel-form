@@ -3,8 +3,8 @@ $soft-red: hsl(0, 93%, 68%)
 
 $grayish-red: hsl(0, 6%, 24%)
 
-$gradient1: linear-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%))
-$gradient2: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%))
+$gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+$gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
 
 *
     margin: 0
@@ -16,7 +16,8 @@ body
     font-size: 16px
     font-family: 'Josefin Sans', sans-serif
     font-weight: 300
-    background: $gradient1 no-repeat
+    background: $gradient1
+    height: 100vh
     // background-image: url("../images/bg-pattern-desktop.svg")
     // background-position: center
     // background-size: cover
@@ -25,19 +26,24 @@ header
     display: flex
     align-items: center
 
-    padding: 1.5rem
-    background-image: $gradient1
+    padding: 30px 40px
+    // background-image: $gradient1
+
+    img
+        height: 25px
 
 main
-    // display: flex
+    display: flex
+    flex-flow: column
 
-    ::before
-        background-image: url("../images/hero-mobile.jpg")
+    &::before
         display: block
-        width: 100%
-        height: 300px
+        content: url("../images/hero-mobile.jpg")
+        text-align: center
+        width: 100vw
 
 .content
+    flex: 1
     text-align: center
     padding: 30px
 
@@ -60,12 +66,50 @@ main
         line-height: 1.6
 
 form
+    margin-top: 40px
+
     fieldset
         display: flex
+        position: relative
+        width: 100%
+        margin: 0 auto
+        
         label
             display: none
 
         input
+            width: 90%
+            padding: 0 25px
+            height: 48px
+            justify-content: center
+            border: 1px solid #ddcacc
+            border-radius: 25px
+            font-weight: 600
+            background-color: transparent
+            color: #ccacb0
+            font-family: 'Josefin Sans', sans-serif
+            outline: none
+
+        button
+            position: absolute
+            right: 10px
+            top: 50%
+            transform: translateY(-50%)
+
+            height: 48px
+            padding: 0 26px
+            border-radius: 25px
+            background: $gradient2
+
+            box-shadow: 0px 2px 20px -3px $soft-red
+            cursor: pointer
+            
+            &:hover
+                box-shadow: 5px 8px 20px -5px $soft-red
+                background: hsl(0, 80%, 86%)
+
+
+        
 
         
 
