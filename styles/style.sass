@@ -18,6 +18,7 @@ body
     font-weight: 300
     background: $gradient1
 
+
 .wrapper
     height: 100vh
     max-width: 375px
@@ -36,7 +37,8 @@ main
     display: flex
     flex-flow: column
 
-    &::before
+    &::after
+        order: -1
         display: block
         content: url("../images/hero-mobile.jpg")
         text-align: center
@@ -100,30 +102,29 @@ form
             border-radius: 25px
             background: $gradient2
 
-            box-shadow: 0px 2px 20px -3px $soft-red
+            box-shadow: 0px 10px 15px -5px $desaturated-red
+            transition: box-shadow .2s
             cursor: pointer
             
             &:hover
-                box-shadow: 5px 8px 20px -5px $soft-red
+                box-shadow: 0px 15px 15px -5px $desaturated-red
                 background: hsl(0, 80%, 86%)
+                transition: box-shadow .2s
 
-@media ( min-width: 1000px )
+
+@media ( min-width: 1200px )
     body
-        // background: url("../images/bg-patter-desktop.svg")
         height: 100vh
         display: flex
         align-items: center
+        background: url("../images/bg-pattern-desktop.svg") no-repeat left bottom/contain
+
 
     .wrapper
-        // background: url("../images/bg-patter-desktop.svg") center/cover no-repeat
-
         display: flex
         align-items: center
-        min-width: 1000px
-        height: 655px
+        min-width: 100vw
         position: relative
-
-        background-color: red
    
     header,
     main
@@ -132,34 +133,51 @@ form
     header
         display: block
         position: absolute
-        top: 0
-        
-        img
+        top: 60px
+        left: 200px
+        padding: 0
 
     main
-        height: 700px
-        display: grid
-        grid-template-columns: 1fr 1fr
+        margin-left: 200px
+        display: flex
         
-
-        &::before
-            display: none
-
         &::after
+            order: 1
+            position: absolute
+
             content: ""
-            background: url("../images/hero-desktop.jpg") center/contain no-repeat
-            // display: block
-            // width: 440px
+            background: url("../images/hero-desktop.jpg") center/cover no-repeat
+
+            top: 0
+            right: 0
+
+            height: 100vh
+            width: 43vw
             
 
         .content
             display: flex
             align-items: center
+            padding: 30px 0
 
             .content__wrapper
-                width: 400px
                 text-align: left
 
                 .content__title
-        
+                    font-size: 72px
+                    width: 500px
+
+                p
+                    font-size: 16px
+                    width: 450px
+                    margin: 0
+                    margin-top: 20px
+
+                form
+                    width: 450px
+
+                    fieldset
+
+                        button
+                            width: 80px
 
