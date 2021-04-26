@@ -17,17 +17,17 @@ body
     font-family: 'Josefin Sans', sans-serif
     font-weight: 300
     background: $gradient1
+
+.wrapper
     height: 100vh
-    // background-image: url("../images/bg-pattern-desktop.svg")
-    // background-position: center
-    // background-size: cover
+    max-width: 375px
+    margin: 0 auto
 
 header
     display: flex
     align-items: center
 
-    padding: 30px 40px
-    // background-image: $gradient1
+    padding: 35px 40px
 
     img
         height: 25px
@@ -40,7 +40,6 @@ main
         display: block
         content: url("../images/hero-mobile.jpg")
         text-align: center
-        width: 100vw
 
 .content
     flex: 1
@@ -108,8 +107,59 @@ form
                 box-shadow: 5px 8px 20px -5px $soft-red
                 background: hsl(0, 80%, 86%)
 
+@media ( min-width: 1000px )
+    body
+        // background: url("../images/bg-patter-desktop.svg")
+        height: 100vh
+        display: flex
+        align-items: center
 
+    .wrapper
+        // background: url("../images/bg-patter-desktop.svg") center/cover no-repeat
+
+        display: flex
+        align-items: center
+        min-width: 1000px
+        height: 655px
+        position: relative
+
+        background-color: red
+   
+    header,
+    main
+        flex: 1
+
+    header
+        display: block
+        position: absolute
+        top: 0
+        
+        img
+
+    main
+        height: 700px
+        display: grid
+        grid-template-columns: 1fr 1fr
         
 
+        &::before
+            display: none
+
+        &::after
+            content: ""
+            background: url("../images/hero-desktop.jpg") center/contain no-repeat
+            // display: block
+            // width: 440px
+            
+
+        .content
+            display: flex
+            align-items: center
+
+            .content__wrapper
+                width: 400px
+                text-align: left
+
+                .content__title
         
 

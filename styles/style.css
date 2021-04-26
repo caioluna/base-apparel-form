@@ -11,7 +11,12 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   background: linear-gradient(135deg, white, #fff5f5);
+}
+
+.wrapper {
   height: 100vh;
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 header {
@@ -21,7 +26,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 40px;
+  padding: 35px 40px;
 }
 
 header img {
@@ -42,7 +47,6 @@ main::before {
   display: block;
   content: url("../images/hero-mobile.jpg");
   text-align: center;
-  width: 100vw;
 }
 
 .content {
@@ -126,5 +130,66 @@ form fieldset button:hover {
   -webkit-box-shadow: 5px 8px 20px -5px #f96262;
           box-shadow: 5px 8px 20px -5px #f96262;
   background: #f8bfbf;
+}
+
+@media (min-width: 1000px) {
+  body {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: 1000px;
+    height: 655px;
+    position: relative;
+    background-color: red;
+  }
+  header,
+  main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  header {
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+  main {
+    height: 700px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main::before {
+    display: none;
+  }
+  main::after {
+    content: "";
+    background: url("../images/hero-desktop.jpg") center/contain no-repeat;
+  }
+  main .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .content .content__wrapper {
+    width: 400px;
+    text-align: left;
+  }
 }
 /*# sourceMappingURL=style.css.map */
