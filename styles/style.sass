@@ -74,7 +74,20 @@ form
         position: relative
         width: 100%
         margin: 0 auto
-        
+
+
+        .error-icon
+            background: url("../images/icon-error.svg") center/cover no-repeat
+            display: none
+            width: 30px
+            height: 30px
+            position: absolute
+            right: 135px
+            top: 15px
+            
+.active
+    display: block
+
         label
             display: none
 
@@ -84,12 +97,22 @@ form
             height: 48px
             justify-content: center
             border: 1px solid #ddcacc
-            border-radius: 25px
+            border-radius: 50px
             font-weight: 600
             background-color: transparent
             color: #ccacb0
             font-family: 'Josefin Sans', sans-serif
             outline: none
+            position: relative
+
+        small.warning
+            position: absolute
+            bottom: -25px
+            left: 25px
+
+            color: $soft-red
+            font-size: 14px
+            font-weight: 400
 
         button
             position: absolute
@@ -111,14 +134,12 @@ form
                 background: hsl(0, 80%, 86%)
                 transition: box-shadow .2s
 
-
 @media ( min-width: 1200px )
     body
         height: 100vh
         display: flex
         align-items: center
         background: #fff
-
 
     .wrapper
         display: flex
@@ -134,14 +155,14 @@ form
         display: block
         position: absolute
         top: 60px
-        left: 200px
+        left: 8%
         padding: 0
 
         img
             height: 32px
 
     main
-        margin-left: 200px
+        margin-left: 8%
         display: flex
         
         &::after
@@ -172,16 +193,22 @@ form
                     width: 500px
 
                 p
-                    font-size: 16px
-                    width: 450px
+                    font-size: 18px
+                    width: 500px
                     margin: 0
                     margin-top: 20px
 
                 form
-                    width: 450px
+                    width: 500px
 
                     fieldset
 
+                        input
+                            height: 60px
+                            font-size: 16px
+
                         button
-                            width: 80px
+                            width: 100px
+                            height: 60px
+                            border-radius: 50px
 
