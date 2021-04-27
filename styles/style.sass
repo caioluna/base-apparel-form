@@ -117,18 +117,18 @@ form
         height: 100vh
         display: flex
         align-items: center
-        background: url("../images/bg-pattern-desktop.svg") no-repeat left bottom/contain
+        background: #fff
 
 
     .wrapper
         display: flex
         align-items: center
-        min-width: 100vw
+        width: 100vw
+        max-width: 1440px
         position: relative
-   
-    header,
-    main
-        flex: 1
+        background: url("../images/bg-pattern-desktop.svg") no-repeat left bottom/contain
+        max-height: 900px
+        box-shadow: 1px 1px 10px -3px hsl(0, 36%, 70%)
 
     header
         display: block
@@ -137,12 +137,14 @@ form
         left: 200px
         padding: 0
 
+        img
+            height: 32px
+
     main
         margin-left: 200px
         display: flex
         
         &::after
-            order: 1
             position: absolute
 
             content: ""
@@ -153,6 +155,8 @@ form
 
             height: 100vh
             width: 43vw
+            max-height: 900px
+            max-width: 620px
             
 
         .content
