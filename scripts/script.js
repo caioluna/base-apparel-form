@@ -1,29 +1,47 @@
 const DOM = {
     messageContainer: document.querySelector(".warning"),
-    input: document.getElementById("email"),
+    emailInput: document.getElementById("email"),
     fieldsetWarning: document.querySelector(".error-icon"),
 
     addWarningHTML() {
         DOM.messageContainer.innerHTML = "Please provide a valid email"
-        DOM.input.style.border = "2px solid #f96262"
+        DOM.emailInput.style.border = "2px solid #f96262"
         DOM.fieldsetWarning.classList.add('active')
     },
 
     resetWarning() {
         DOM.fieldsetWarning.classList.remove('active')
         DOM.messageContainer.innerHTML = ""
-        DOM.input.style.border = ""
-        DOM.input.value = ""
+        DOM.emailInput.style.border = ""
+        DOM.emailInput.value = ""
     },
 }
 
 const Form = {
-    email: document.getElementById("email"),
+    emailInput: document.getElementById("email"),
+    regEx: /^[a-zA-Z]+[\.|\_]?[a-zA-Z]+@([a-zA-Z]+[^\.?\_?])\.[a-zA-Z]{1,}\.?[a-zA-Z]+?$/g,
+    errorDiv: document.querySelector(".error-icon"),
+    messageContainer: document.querySelector(".warning"),
+
+    trackWarning() {
+
+        Form.emailInput.addEventListener("keyup", () => {
+
+            if(!Form.emailInput.value.match(Form.regEx) || Form.emailInput.value === "") {
+                Form.errorDiv.classList.add("active")
+                Form.emailInput.style.border = "2px solid #f96262"
+
+            } else {
+                Form.errorDiv.classList.remove("active")
+                Form.emailInput.style.border = ""
+                Form.messageContainer.innerHTML = ""
+            }
+        })
+    },
 
     validateFields() {
-        const email = document.getElementById("email").value
-        const regEx = /^[a-zA-Z]+[\.|\_]?[a-zA-Z]+@[a-zA-Z]+[^\.?\_?]\.[a-zA-Z]{1,3}\.?[a-zA-Z]+?$/g
-        const verificationOk = regEx.test(email)
+        const email = Form.emailInput.value
+        const verificationOk = Form.regEx.test(email)
 
         if (email === "" || !verificationOk ) {
             Form.errorWarning()
@@ -42,13 +60,14 @@ const Form = {
     submit(event) {
         event.preventDefault()
         try {
-
+            
+            Form.trackWarning()
             Form.validateFields()
             Form.validInput()
             alert("Formulario enviado!")
 
         } catch (error) {
-            console.log(error.message)
+            console.log(error)
         }
     },
 

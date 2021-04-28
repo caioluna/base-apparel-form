@@ -30,14 +30,14 @@
 		
 					<p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 				
-					<form novalidate action="" onsubmit="Form.submit(event)">
+					<form novalidate action="" method="GET" onsubmit="Form.submit(event)">
 						<fieldset>
 
 							<label for="email">Email Address</label>
 							<input type="email" name="email" id="email" placeholder="Email Address">
-							<div class="error-icon"></div>
+							<div aria-label="Error - Invalid Email" class="error-icon"></div>
 							<small class="warning"></small>
-							<button type="submit" class="form__button">
+							<button aria-label="Submit Button" title="Submit Button" type="submit" class="form__button">
 								<img src="./images/icon-arrow.svg">
 							</button>
 							

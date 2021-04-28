@@ -13,6 +13,10 @@ body {
   background: linear-gradient(135deg, white, #fff5f5);
 }
 
+.active {
+  display: block !important;
+}
+
 .wrapper {
   height: 100vh;
   max-width: 375px;
@@ -97,15 +101,11 @@ form fieldset {
 form fieldset .error-icon {
   background: url("../images/icon-error.svg") center/cover no-repeat;
   display: none;
-  width: 30px;
-  height: 30px;
   position: absolute;
-  right: 135px;
-  top: 15px;
-}
-
-form fieldset .error-icon.active {
-  display: block;
+  width: 25px;
+  height: 25px;
+  right: 85px;
+  top: 11px;
 }
 
 form fieldset label {
@@ -123,10 +123,26 @@ form fieldset input {
   border-radius: 50px;
   font-weight: 600;
   background-color: transparent;
-  color: #ccacb0;
+  color: #000;
   font-family: 'Josefin Sans', sans-serif;
   outline: none;
   position: relative;
+}
+
+form fieldset input::-webkit-input-placeholder {
+  color: #ccacb0;
+}
+
+form fieldset input:-ms-input-placeholder {
+  color: #ccacb0;
+}
+
+form fieldset input::-ms-input-placeholder {
+  color: #ccacb0;
+}
+
+form fieldset input::placeholder {
+  color: #ccacb0;
 }
 
 form fieldset small.warning {
@@ -242,17 +258,24 @@ form fieldset button:hover {
     margin: 0;
     margin-top: 20px;
   }
-  main .content .content__wrapper form {
+  form {
     width: 500px;
   }
-  main .content .content__wrapper form fieldset input {
-    height: 60px;
+  form fieldset .error-icon {
+    width: 25px;
+    height: 25px;
+    right: 125px;
+    top: 14px;
+  }
+  form fieldset input {
+    height: 55px;
     font-size: 16px;
   }
-  main .content .content__wrapper form fieldset button {
+  form fieldset button {
     width: 100px;
-    height: 60px;
+    height: 55px;
     border-radius: 50px;
+    top: 49%;
   }
 }
 /*# sourceMappingURL=style.css.map */

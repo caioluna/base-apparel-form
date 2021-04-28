@@ -18,6 +18,8 @@ body
     font-weight: 300
     background: $gradient1
 
+.active
+    display: block !important 
 
 .wrapper
     height: 100vh
@@ -75,18 +77,14 @@ form
         width: 100%
         margin: 0 auto
 
-
         .error-icon
             background: url("../images/icon-error.svg") center/cover no-repeat
             display: none
-            width: 30px
-            height: 30px
             position: absolute
-            right: 135px
-            top: 15px
-            
-.active
-    display: block
+            width: 25px
+            height: 25px
+            right: 85px
+            top: 11px
 
         label
             display: none
@@ -100,10 +98,14 @@ form
             border-radius: 50px
             font-weight: 600
             background-color: transparent
-            color: #ccacb0
+            color: #000
             font-family: 'Josefin Sans', sans-serif
             outline: none
             position: relative
+
+            &::placeholder
+                color: #ccacb0
+
 
         small.warning
             position: absolute
@@ -198,17 +200,24 @@ form
                     margin: 0
                     margin-top: 20px
 
-                form
-                    width: 500px
+    form
+        width: 500px
 
-                    fieldset
+        fieldset
 
-                        input
-                            height: 60px
-                            font-size: 16px
+            .error-icon
+                width: 25px
+                height: 25px
+                right: 125px
+                top: 14px
 
-                        button
-                            width: 100px
-                            height: 60px
-                            border-radius: 50px
+            input
+                height: 55px
+                font-size: 16px
+
+            button
+                width: 100px
+                height: 55px
+                border-radius: 50px
+                top: 49%
 
