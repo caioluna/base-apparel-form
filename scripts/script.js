@@ -45,7 +45,7 @@ const Form = {
 
         if (email === "" || !verificationOk ) {
             Form.errorWarning()
-            throw new Error("Invalid email")
+            throw new Error("Invalid email...")
         } 
     },
 
@@ -64,7 +64,7 @@ const Form = {
             Form.trackWarning()
             Form.validateFields()
             Form.validInput()
-            alert("Formulario enviado!")
+            alert("Thanks for subscribing!")
 
         } catch (error) {
             console.log(error)
