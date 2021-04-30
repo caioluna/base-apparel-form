@@ -98,6 +98,10 @@ form fieldset {
   margin: 0 auto;
 }
 
+form fieldset legend {
+  display: none;
+}
+
 form fieldset .error-icon {
   background: url("../images/icon-error.svg") center/cover no-repeat;
   display: none;
